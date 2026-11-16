@@ -57,7 +57,8 @@ if cd:
     except Exception:
         pass
 
-print(f"Status Mesin: {state}, Umur: {elapsed}m / Max: {max_run}m (Batas flip: {threshold}m)")
+machine_name = info.get("name", "N/A")
+print(f"Mesin: {machine_name} ({MACHINE_ID}) | Status: {state} | Umur: {elapsed}m / Max: {max_run}m (Batas flip: {threshold}m)")
 
 if state == "running":
     if elapsed >= threshold and elapsed > 0:
